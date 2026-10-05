@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#000000"
+    >
+
+    <!--촛대와 드래그 촛불-->
+    <ImageView
+        android:id="@+id/image_candle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/adView"
+        android:layout_below="@+id/layout_header"
+        android:scaleType="fitEnd"
+        />
+
+    <!--연기와 불꽃-->
+<!--    <com.happyhouse.electcandle.DrawerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/button_timer_pause"
+    />-->
+        <com.happyhouse.electcandle.FlameAnimationView
+            android:id="@+id/layout_flame_animation_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/button_timer_pause"
+            />
+<!--    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/button_timer_pause"
+        >
+        <ImageView
+            android:id="@+id/image_object"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            android:scaleType="fitEnd"
+            />
+    </FrameLayout>-->
+
+    <!--맨 밑으로 가야함. 베너광고, 스위치 등등-->
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ad_banner">
+    </com.google.android.gms.ads.AdView>
+
+<!--    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/ad_test_banner">
+    </com.google.android.gms.ads.AdView>-->
+
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="8dp"
+        >
+        <Button
+            android:id="@+id/button_bgm"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:background="@null"
+            />
+<!--        <Button
+            android:id="@+id/button_menu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            />-->
+        <Button
+            android:id="@+id/button_timer"
+            android:layout_width="40dp"
+            android:gravity="center"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            />
+    </RelativeLayout>
+
+<!--    <TextView
+        android:id="@+id/text_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:fontFamily="sans-serif"
+        />-->
+
+    <Button
+        android:id="@+id/button_timer_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:textColor="@color/transparent"
+        android:textSize="50dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/transparent"
+        android:layout_above="@id/button_timer_pause"
+        />
+
+    <Button
+        android:id="@+id/button_timer_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:textColor="@color/white"
+        android:text=""
+        android:textSize="36sp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/transparent"
+        android:layout_above="@id/adView"
+        android:fontFamily="sans-serif"
+        android:visibility="invisible"
+        />
+
+    <RelativeLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/adView"
+        android:padding="8dp"
+        >
+
+        <ToggleButton
+            android:id="@+id/button_bell_on_off"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:textOn=""
+            android:textOff=""
+            />
+
+        <ToggleButton
+            android:id="@+id/button_bgm_on_off"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:textOn=""
+            android:textOff=""
+            />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
