@@ -1,32 +1,32 @@
-# 수련초 (Electcandle)
+# Electcandle
 
-호흡 수련용 촛불 앱입니다. 심지를 켜면 불꽃이 호흡 주기에 맞춰 커졌다 작아지고, 기기를 기울이면 불꽃도 함께 기울어집니다.
+Electcandle (수련초) is a candle app for breathing practice. When the wick is lit, the flame grows and shrinks with the breathing cycle, and tilts along with the device.
 
-## 기능
+## Features
 
-- 세로 화면의 촛불과 불꽃, 수련이 끝나면 연기
-- 자이로스코프로 불꽃 기울기
-- 배경음 반복 재생, 앱에 포함된 곡 또는 기기의 음악
-- 호흡 한 사이클의 들숨 지점과 끝에서 종소리
-- 수련 시간이 끝나면 종을 치고 배경음을 멈춤
+- Candle and flame on a portrait screen, and smoke when the session ends
+- Flame tilt from the gyroscope
+- Looping background audio, either a track bundled with the app or music on the device
+- A bell at the inhale point and at the end of each breathing cycle
+- When the session time is up, the bell rings and the background audio stops
 
-기본 호흡 시간은 60초, 기본 수련 시간은 1시간입니다.
+The default breathing time is 60 seconds, and the default session time is 1 hour.
 
-## 빌드
+## Build
 
-Android Studio에서 이 폴더를 엽니다. JDK 17이 필요합니다.
+Open this folder in Android Studio. JDK 17 is required.
 
-| 항목 | 값 |
+| Item | Value |
 | --- | --- |
-| 패키지 | `com.happyhouse.electcandle` |
-| 언어 | Java |
+| Package | `com.happyhouse.electcandle` |
+| Language | Java |
 | compileSdk | 36 |
 | minSdk | 23 |
 | targetSdk | 28 |
 
-`local.properties`는 저장소에 없습니다. SDK 경로는 Android Studio가 이 파일을 만들 때 넣습니다.
+`local.properties` is not in the repository. Android Studio writes the SDK path when it creates this file.
 
-릴리스 서명이 필요하면 같은 파일에 아래만 로컬로 추가합니다. 키스토어와 비밀번호는 커밋하지 않습니다.
+To sign a release build, add only the following to that same file locally. Do not commit the keystore or passwords.
 
 ```
 release.storeFile=C\:\\path\\to\\appkey.jks
@@ -35,13 +35,13 @@ release.keyAlias=
 release.keyPassword=
 ```
 
-이 값이 없으면 debug 빌드는 Android Studio의 debug 키로 서명됩니다.
+If these values are missing, debug builds are signed with Android Studio's debug key.
 
-광고 단위는 Google 테스트 ID입니다. 배포용 ID로 바꾸려면 `app/src/main/res/values/strings.xml`의 `ad_app_id`, `ad_front`, `ad_end`, `ad_banner`를 교체합니다.
+Ad units use Google test IDs. To switch to production IDs, replace `ad_app_id`, `ad_front`, `ad_end`, and `ad_banner` in `app/src/main/res/values/strings.xml`.
 
-## 화면
+## Screens
 
-- `MainActivity` — 촛불, 타이머, 기울기, 광고
-- `FlameAnimationView` — 불꽃과 연기
-- `MusicService` — 배경음
-- `SoundManager` — 종소리 (`res/raw/ring`)
+- `MainActivity` — candle, timer, tilt, and ads
+- `FlameAnimationView` — flame and smoke
+- `MusicService` — background audio
+- `SoundManager` — bell (`res/raw/ring`)
